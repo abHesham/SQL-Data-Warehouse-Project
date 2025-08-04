@@ -161,6 +161,12 @@ begin
 		print 'error message' + cast (ERROR_NUMBER() AS NVARCHAR);
 		PRINT 'error message' + cast (error_state() as nvarchar);
 		print '==========================='
+
+	end catch
+end
+
+
+			
 	
 	end catch
 
