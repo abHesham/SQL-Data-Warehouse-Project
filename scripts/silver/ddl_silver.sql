@@ -31,8 +31,8 @@ if object_id ('silver.crm_prd_info', 'U') is not null
 
 create table silver.crm_prd_info (
 	prd_id int,
-	prd_key nvarchar(50),
 	cat_id nvarchar(50),
+	prd_key nvarchar(50),
 	prd_nm nvarchar(50),
 	prd_cost int,
 	prd_line nvarchar(50),
