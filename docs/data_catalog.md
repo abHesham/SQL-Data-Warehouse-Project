@@ -49,7 +49,7 @@ It consists of **dimension tables** and **fact tables** for specific business me
 
 - **Purpose:** Stores transactional sales data for analytical purposes.
 - **Columns:**
-- 
+
 | Column Name     | Data Type    | Description                                      |
 |-----------------|--------------|--------------------------------------------------|
 | order_number    | NVARCHAR(50) | A unique alphanumeric identifier for each sales order (e.g., SO54496). |
