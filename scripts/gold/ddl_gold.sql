@@ -18,7 +18,7 @@ ________________________________________________________________________________
 -- Create Dimension: gold.dim_customers
 -- =============================================================================
 
-if object_id('gold.dim_customers', 'V') si not null
+if object_id('gold.dim_customers', 'V') is not null
   drop view gold.dim_customers;
 go
 create view gold.dim_customers as 
@@ -48,7 +48,7 @@ on ci.cst_key = la.CID;
 -- =============================================================================
 
 
-if object_id('gold.dim_products', 'V') si not null
+if object_id('gold.dim_products', 'V') is not null
   drop view gold.dim_products;
 go
 create view gold.dim_products as
@@ -76,21 +76,21 @@ where prd_end_dt is null; -- filter out historical data
 -- =============================================================================
 
 
-if object_id('gold.fact_sales', 'V') si not null
+if object_id('gold.fact_sales', 'V') is not null
   drop view gold.fact_sales;
 go
 
 create view gold.fact_sales as
 select 
-sd.sls_ord_num as order_number,
-pr.product_key,
-cu.customer_key,
-sd.sls_order_dt as order_date,
-sd.sls_ship_date as shipping_date,
-sd.sls_due_dt as dute_date,
-sd.sls_sales as sales_amount,
-sd.sls_quantity as quantity,
-sd.sls_price as price
+	sd.sls_ord_num as order_number,
+	pr.product_key,
+	cu.customer_key,
+	sd.sls_order_dt as order_date,
+	sd.sls_ship_date as shipping_date,
+	sd.sls_due_dt as dute_date,
+	sd.sls_sales as sales_amount,
+	sd.sls_quantity as quantity,
+	sd.sls_price as price
 from silver.crm_sales_details sd
 left join gold.dim_products pr
 on sd.sls_prd_key = pr.product_number
